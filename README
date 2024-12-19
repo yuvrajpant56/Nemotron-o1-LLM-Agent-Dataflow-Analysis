@@ -1,0 +1,76 @@
+# **Nemotron-o1: LLM-Agent Dataflow Analysis**
+
+### **Overview**
+Nemotron-o1 is an agentic framework leveraging large language models (LLMs) for automated data flow analysis. This tool focuses on source/sink extraction, data flow summaries, and path feasibility analysis. Nemotron-o1 was benchmarked against CWE-369 test cases, demonstrating competitive performance compared to GPT-3.5 and GPT-4 in C/C++ programs.
+
+### **Key Features**
+- **Source and Sink Extraction:** Identifies critical points in the data flow for vulnerabilities.
+- **Data Flow Summary:** Summarizes paths and facts for better visualization and reasoning.
+- **Path Feasibility Analysis:** Uses Z3 solver for feasibility checks and detailed debugging.
+- **Benchmarking:** Tested on Juliet Test Suite 1.1 with CWE-369-DBZ (Divide-by-Zero) scenarios.
+
+### **Repository Structure**
+```
+Nemotron-o1-LLM-Agent-Dataflow-Analysis/
+├── Phase_1_Script.py   # Source and Sink Extraction
+├── Phase_2_Script.py   # Data Flow Summary Generation
+├── Phase_3_Script.py   # Path Feasibility Analysis
+├── .DS_Store           # Metadata file (optional, remove if not needed)
+└── README.md           # Project documentation
+```
+
+### **Installation**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yuvrajpant56/Nemotron-o1-LLM-Agent-Dataflow-Analysis.git
+   cd Nemotron-o1-LLM-Agent-Dataflow-Analysis
+   ```
+2. Install the required dependencies (Python 3.8+ recommended):
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *(Add a `requirements.txt` file listing dependencies such as `z3-solver` and any LLM-related packages.)*
+
+3. Set up necessary API keys or environment variables for LLMs if applicable.
+
+### **Usage**
+#### Phase 1: Source and Sink Extraction
+Run the script for source/sink identification:
+```bash
+python Phase_1_Script.py --input your_code.c
+```
+
+#### Phase 2: Data Flow Summary
+Generate a summary of the data flow paths:
+```bash
+python Phase_2_Script.py --input extracted_sources_and_sinks.json
+```
+
+#### Phase 3: Path Feasibility Analysis
+Analyze the feasibility of paths using the Z3 solver:
+```bash
+python Phase_3_Script.py --input data_flow_summary.json
+```
+
+### **Benchmarking Results**
+Nemotron-o1 was tested on the Juliet Test Suite 1.1 with CWE-369 benchmarks. Key results include:
+
+| **Phase** | **Model**         | **Precision** | **Recall** | **F1 Score** |
+|-----------|-------------------|---------------|------------|--------------|
+| Phase 1   | Nemotron 70B      | 100%          | 100%       | 1.00         |
+| Phase 2   | Nemotron 70B      | 87.73%        | 87.9%      | 0.88         |
+| Phase 3   | Nemotron 70B      | 86.67%        | 90.75%     | 0.92         |
+
+### **Future Work**
+- Extend support to languages beyond C/C++.
+- Conduct ablation studies to improve model performance.
+- Optimize the agentic framework for faster inference times.
+- Explore additional bugs beyond CWE-369.
+
+
+
+### **Acknowledgments**
+Special thanks to Viraj Samson for contributions and guidance.
+
+### **License**
+This project is licensed under the MIT License. See the `LICENSE` file for details.

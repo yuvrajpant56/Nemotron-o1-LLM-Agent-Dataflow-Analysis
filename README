@@ -68,9 +68,3 @@ Nemotron-o1 was tested on the Juliet Test Suite 1.1 with CWE-369 benchmarks. Key
 - Explore additional bugs beyond CWE-369.
 
 
-
-### **Acknowledgments**
-Special thanks to Viraj Samson for contributions and guidance.
-
-### **License**
-This project is licensed under the MIT License. See the `LICENSE` file for details.

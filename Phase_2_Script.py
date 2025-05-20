@@ -13,10 +13,10 @@ import os
 # ==========================
 
 # Set the path to the folder containing .c or .cpp files
-INPUT_FOLDER_PATH = '/mmfs1/scratch/jacks.local/hdubey/Ollama/c_code'  # <-- Set your input folder path here
+INPUT_FOLDER_PATH =  <-- Set your input folder path here
 
 # Set the path to the folder where summaries will be saved
-OUTPUT_FOLDER_PATH = '/mmfs1/scratch/jacks.local/hdubey/Ollama/summaries'  # <-- Set your output folder path here
+OUTPUT_FOLDER_PATH = <-- Set your output folder path here
 
 # ==========================
 # Setup Logging
